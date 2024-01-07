@@ -1,15 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Nav from './Components/navbar/Nav'
+import Banner from './Components/banner/Banner'
+import Footer from './Components/footer/Footer'
+import Product from './Components/Products/Product'
 // import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <button className='btn btn-primary btn-accent'>Hello </button>
-    </>
+    <div className='bg-slate-50'>
+      <div className='max-w-7xl mx-auto space-y-4'>
+        <Nav></Nav>
+        <Banner></Banner>
+        <div className='mb-10'>
+
+          <Product type={"IsPopular"}></Product>
+        </div>
+        <div className='mt-10'>
+          <Product type={"IsRecommended"}></Product>
+        </div>
+      </div>
+      <Footer></Footer>
+      {/* <button className='btn btn-primary btn-accent'>Hello </button> */}
+    </div>
   )
 }
 
