@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import "./product.css"
 // import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import AddProduct from './AddProduct';
 
 
 const Product = ({ type }) => {
@@ -41,10 +42,12 @@ const Product = ({ type }) => {
                     <button className='hover:text-orange-500' onClick={() => document.getElementById('my_modal_1').showModal()}>Add More </button>
                     <dialog id="my_modal_1" className="modal">
                         <div className="modal-box">
-                            <h3 className="font-bold text-lg">Hello!</h3>
-                            <p className="py-4">Press ESC key or click the button below to close</p>
+                            <h3 className="font-bold text-lg">Add A Product </h3>
+                            <p className="py-4">Press Submit to Add a Product </p>
+                            <AddProduct />
                             <div className="modal-action">
                                 <form method="dialog">
+
                                     {/* if there is a button in form, it will close the modal */}
                                     <button className="btn">Close</button>
                                 </form>
