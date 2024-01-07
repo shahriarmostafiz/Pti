@@ -8,10 +8,10 @@ const Footer = () => {
     return (
         <div className='bg-[#f99f1c] py-12 mt-10 flex items-center'>
             <div className='md:w-3/5 px-10  flex flex-col items-center '>
-                <div className='w-full space-y-6'>
-                    <div className='relative w-4/5'>
+                <div className='w-full space-y-6 text-center '>
+                    <div className='relative md:w-4/5'>
                         <input type="text" name="" id="" placeholder='Enter your email' className='input py-8 pl-6  rounded-3xl w-full ' />
-                        <button className='absolute btn btn-wide   right-2 bottom-2  bg-orange-500 py-0 rounded-2xl text-white border hover:btn-warning'>Subscribe  <FaArrowRightLong /></button>
+                        <button className='absolute btn md:btn-wide   right-2 bottom-2  bg-orange-500 py-0 rounded-2xl text-white border hover:btn-warning'>Subscribe  <FaArrowRightLong /></button>
                     </div>
                     <div className="flex justify-between items-end">
                         <div>
@@ -40,7 +40,7 @@ const Footer = () => {
 
 
             </div>
-            <div className="w-2/5">
+            <div className="hidden md:block w-2/5">
                 <img src={FImage} className="max-w-80" alt="" />
             </div>
         </div>

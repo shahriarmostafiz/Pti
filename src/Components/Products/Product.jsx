@@ -10,11 +10,13 @@ import AddProduct from './AddProduct';
 const Product = ({ type }) => {
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(4)
+    const { data } = useContext(MyContext)
+
 
     // let start = 0
     // let end = 4
     const nextPage = () => {
-        setEnd(8)
+        setEnd(data.length)
         setStart(4)
         // end = 8
     }
@@ -24,7 +26,7 @@ const Product = ({ type }) => {
         setStart(0)
         setEnd(4)
     }
-    const { data } = useContext(MyContext)
+
     function getRandomSort() {
         return Math.random() - 0.5;
     }
@@ -33,7 +35,7 @@ const Product = ({ type }) => {
 
     // console.log(products);
     return (
-        <div className='my-4 py-4'>
+        <div className=' py-4'>
             <div className="py-2 flex justify-between">
                 <h1 className='pb-4'>{
                     type === "IsPopular" ? "Popular" : "Recommended"
@@ -47,7 +49,6 @@ const Product = ({ type }) => {
                             <AddProduct />
                             <div className="modal-action">
                                 <form method="dialog">
-
                                     {/* if there is a button in form, it will close the modal */}
                                     <button className="btn">Close</button>
                                 </form>
@@ -59,7 +60,7 @@ const Product = ({ type }) => {
                     <button onClick={nextPage} className='hover:text-orange-400'><IoIosArrowForward /></button>
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
                 {
                     products.map(item => <ProductCard key={item.Id} item={item}></ProductCard>)
                 }
