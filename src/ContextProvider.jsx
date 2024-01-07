@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { createContext, useEffect, useState } from 'react';
 export const MyContext = createContext(null)
 const ContextProvider = ({ children }) => {
+    // const apiUrl = '../functions/proxy.js'
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get("http://www.api.technicaltest.quadtheoryltd.com/api/Item?page=1&pageSize=10")
